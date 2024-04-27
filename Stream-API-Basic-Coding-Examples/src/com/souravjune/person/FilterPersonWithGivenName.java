@@ -1,4 +1,6 @@
-import com.souravjune.datamodels.Person;
+package com.souravjune.person;
+
+import com.souravjune.person.Person;
 
 import java.util.Arrays;
 import java.util.List;

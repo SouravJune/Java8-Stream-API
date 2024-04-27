@@ -1,4 +1,4 @@
-package com.souravjune.datamodels;
+package com.souravjune.person;
 
 public class Person {
 

@@ -1,4 +1,4 @@
-package com.souravjune.datamodels;
+package com.souravjune.product;
 
 public class Product {
 

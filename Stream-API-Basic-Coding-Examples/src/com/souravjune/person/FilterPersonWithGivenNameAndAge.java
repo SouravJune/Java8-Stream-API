@@ -1,6 +1,8 @@
+package com.souravjune.person;
+
 import java.util.Arrays;
 import java.util.List;
-import com.souravjune.datamodels.Person;
+import com.souravjune.person.Person;
 
 /** Question: Filter List of Person with the given Name and Age using Java8 Stream */
 public class FilterPersonWithGivenNameAndAge {

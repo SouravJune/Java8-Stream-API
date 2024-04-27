@@ -1,10 +1,12 @@
-import com.souravjune.datamodels.Product;
+package com.souravjune.product;
+
+import com.souravjune.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/** Question: Filter List of Products with the given Price using Java8 Stream */
-public class FilterProductsWithGivenPrice {
+/** Question: Filter List of Products with the given Price and Count Filter Products using Java8 Stream */
+public class FilterProductCount {
 
     public static void main(String[] args) {
 
@@ -16,25 +18,25 @@ public class FilterProductsWithGivenPrice {
         productList.add(new Product(104, "Iphone", 150000));
         productList.add(new Product(105, "OnePlus Phone", 80000));
 
-        List<Product> filteredProducts1 = productList.stream()
+        Long count1 = productList.stream()
                 .filter(product -> product.getProductPrice() < 100000)
-                .toList();
+                .count();
 
-        List<Product> filteredProducts2 = productList.stream()
+        Long count2 = productList.stream()
                 .filter(product -> product.getProductPrice() > 100000)
-                .toList();
+                .count();
 
-        List<Product> filteredProducts3 = productList.stream()
+        Long count3 = productList.stream()
                 .filter(product -> product.getProductPrice() < 100000 && product.getProductPrice() > 50000)
-                .toList();
+                .count();
 
         System.out.println("Filtered Product List: < 100000");
-        filteredProducts1.forEach(System.out::println);
+        System.out.println(count1);
 
         System.out.println("Filtered Product List: > 100000");
-        filteredProducts2.forEach(System.out::println);
+        System.out.println(count2);
 
         System.out.println("Filtered Product List: < 100000 AND > 50000");
-        filteredProducts3.forEach(System.out::println);
+        System.out.println(count3);
     }
 }
