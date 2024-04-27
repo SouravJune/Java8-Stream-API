@@ -18,28 +18,37 @@ public class FilterProductAndGetProductNames {
         productList.add(new Product(104, "Iphone", 150000));
         productList.add(new Product(105, "OnePlus Phone", 80000));
 
+        /* Get All Product Names: */
         List<String> filteredProducts1 = productList.stream()
+                .map(Product::getProductName)
+                .toList();
+
+        /* Filter Product Names: */
+        List<String> filteredProducts2 = productList.stream()
                 .filter(product -> product.getProductPrice() < 100000)
                 .map(Product::getProductName)
                 .toList();
 
-        List<String> filteredProducts2 = productList.stream()
+        List<String> filteredProducts3 = productList.stream()
                 .filter(product -> product.getProductPrice() > 100000)
                 .map(Product::getProductName)
                 .toList();
 
-        List<String> filteredProducts3 = productList.stream()
+        List<String> filteredProducts4 = productList.stream()
                 .filter(product -> product.getProductPrice() < 100000 && product.getProductPrice() > 50000)
                 .map(Product::getProductName)
                 .toList();
 
-        System.out.println("***** Filtered Product Names: < 100000 *****");
+        System.out.println("***** All Product Names: *****");
         filteredProducts1.forEach(System.out::println);
 
-        System.out.println("***** Filtered Product Names: > 100000 *****");
+        System.out.println("***** Filtered Product Names: < 100000 *****");
         filteredProducts2.forEach(System.out::println);
 
-        System.out.println("***** Filtered Product Names: < 100000 AND > 50000 *****");
+        System.out.println("***** Filtered Product Names: > 100000 *****");
         filteredProducts3.forEach(System.out::println);
+
+        System.out.println("***** Filtered Product Names: < 100000 AND > 50000 *****");
+        filteredProducts4.forEach(System.out::println);
     }
 }

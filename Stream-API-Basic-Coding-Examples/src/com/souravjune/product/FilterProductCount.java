@@ -34,14 +34,14 @@ public class FilterProductCount {
                 .getCount();
 
 
-        System.out.println("Filtered Product Count: < 100000");
+        System.out.println("***** Filtered Product Count: < 100000 *****");
         System.out.println(count1);
 
-        System.out.println("Filtered Product Count: > 100000");
+        System.out.println("***** Filtered Product Count: > 100000 *****");
         System.out.println(count2);
 
-        System.out.println("Filtered Product Count: < 100000 AND > 50000 " +
-                "Using Collectors.summarizingDouble() method ");
+        System.out.println("***** Filtered Product Count: < 100000 AND > 50000 " +
+                "Using Collectors.summarizingDouble() method *****");
         System.out.println(count3);
     }
 }

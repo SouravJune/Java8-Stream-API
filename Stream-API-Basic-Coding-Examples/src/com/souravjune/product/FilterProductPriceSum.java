@@ -44,20 +44,20 @@ public class FilterProductPriceSum {
                 .collect(Collectors.summarizingDouble(Product::getProductPrice))
                 .getSum();
 
-        System.out.println("Filtered Product Total Price: < 100000 " +
-                "Using Stream.reduce()");
+        System.out.println("***** Filtered Product Total Price: < 100000 " +
+                "Using Stream.reduce() *****");
         System.out.println(totalPrice1.get());
 
-        System.out.println("Filtered Product Total Price: > 100000 " +
-                "Using Stream.reduce() and built-in Double::sum method");
+        System.out.println("***** Filtered Product Total Price: > 100000 " +
+                "Using Stream.reduce() and built-in Double::sum method *****");
         System.out.println(totalPrice2);
 
-        System.out.println("Filtered Product Total Price: < 100000 AND > 50000" +
-                "Using IntStream.sum()");
+        System.out.println("***** Filtered Product Total Price: < 100000 AND > 50000" +
+                "Using IntStream.sum() *****");
         System.out.println(totalPrice3);
 
-        System.out.println("Filtered Product Total Price: < 100000 AND > 50000" +
-                "Collectors.summarizingDouble()");
+        System.out.println("***** Filtered Product Total Price: < 100000 AND > 50000" +
+                "Collectors.summarizingDouble() *****");
         System.out.println(totalPrice4);
     }
 }
