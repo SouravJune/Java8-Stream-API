@@ -4,6 +4,7 @@ import com.souravjune.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /** Question: Filter List of Products with the given Price and Count Filter Products using Java8 Stream */
 public class FilterProductCount {
@@ -26,17 +27,21 @@ public class FilterProductCount {
                 .filter(product -> product.getProductPrice() > 100000)
                 .count();
 
+        /* Using Collectors.summarizingDouble() method: */
         Long count3 = productList.stream()
                 .filter(product -> product.getProductPrice() < 100000 && product.getProductPrice() > 50000)
-                .count();
+                .collect(Collectors.summarizingDouble(Product::getProductPrice))
+                .getCount();
 
-        System.out.println("Filtered Product List: < 100000");
+
+        System.out.println("Filtered Product Count: < 100000");
         System.out.println(count1);
 
-        System.out.println("Filtered Product List: > 100000");
+        System.out.println("Filtered Product Count: > 100000");
         System.out.println(count2);
 
-        System.out.println("Filtered Product List: < 100000 AND > 50000");
+        System.out.println("Filtered Product Count: < 100000 AND > 50000 " +
+                "Using Collectors.summarizingDouble() method ");
         System.out.println(count3);
     }
 }

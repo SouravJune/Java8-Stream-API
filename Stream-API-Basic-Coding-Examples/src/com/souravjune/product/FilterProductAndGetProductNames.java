@@ -33,13 +33,13 @@ public class FilterProductAndGetProductNames {
                 .map(Product::getProductName)
                 .toList();
 
-        System.out.println("***** Filtered Product List: < 100000 *****");
+        System.out.println("***** Filtered Product Names: < 100000 *****");
         filteredProducts1.forEach(System.out::println);
 
-        System.out.println("***** Filtered Product List: > 100000 *****");
+        System.out.println("***** Filtered Product Names: > 100000 *****");
         filteredProducts2.forEach(System.out::println);
 
-        System.out.println("***** Filtered Product List: < 100000 AND > 50000 *****");
+        System.out.println("***** Filtered Product Names: < 100000 AND > 50000 *****");
         filteredProducts3.forEach(System.out::println);
     }
 }
