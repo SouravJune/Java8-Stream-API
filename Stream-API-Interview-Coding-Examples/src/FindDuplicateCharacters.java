@@ -16,7 +16,8 @@ public class FindDuplicateCharacters {
         Map<Character, Long> duplicateCharactersFrequency = str.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().filter(entry -> entry.getValue() > 1)
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() > 1)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         duplicateCharactersFrequency.forEach((character, frequency) ->
