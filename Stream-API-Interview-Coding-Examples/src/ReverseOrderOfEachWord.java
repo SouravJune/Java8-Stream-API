@@ -18,7 +18,6 @@ public class ReverseOrderOfEachWord {
                     return String.join(" ", list);
                 }));
 
-
         System.out.println("Original string: " + sentence);
         System.out.println("Reversed words order: " + reversedSentence);
     }
