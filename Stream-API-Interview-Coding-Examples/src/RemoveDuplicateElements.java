@@ -6,7 +6,7 @@ public class RemoveDuplicateElements {
 
     public static void main(String[] args) {
 
-        /** Question: Java 8 Program to Remove Duplicate Numbers from a List */
+        /* Question: Java 8 Program to Remove Duplicate Numbers from a List */
         List<Integer> numberList = Arrays.asList(1, 3, 4, 5, 6, 6, 88, 45, 45, 45, 3, 2);
 
         List<Integer> distinctNumberList = numberList.stream()
@@ -15,7 +15,7 @@ public class RemoveDuplicateElements {
 
         System.out.println("***** List without duplicate numbers: ***** " + distinctNumberList);
 
-        /** Question: Java 8 Program to Remove Duplicate Strings from a List */
+        /* Question: Java 8 Program to Remove Duplicate Strings from a List */
         List<String> fruitList = Arrays.asList("Apple", "Banana", "Guava", "Banana", "Pineapple", "Apple");
 
         List<String> distinctFruitList = fruitList.stream()
@@ -24,7 +24,7 @@ public class RemoveDuplicateElements {
 
         System.out.println("***** List without duplicate fruits: ***** " + distinctFruitList);
 
-        /** Question: Java 8 Program to Remove Duplicate Objects from a List */
+        /* Question: Java 8 Program to Remove Duplicate Objects from a List */
         List<Person> personList = Arrays.asList(
                 new Person("Blaze", "Male"),
                 new Person("Sepia", "Female"),
