@@ -12,7 +12,7 @@ public class FilterNullValues {
         List<String> listWithNulls = Arrays.asList("apple", null, "banana", null, "cherry", null);
 
         List<String> filteredList = listWithNulls.stream()
-                .filter(Objects::nonNull) //.filter(item -> item != null)
+                .filter(Objects::nonNull) // .filter(item -> item != null)
                 .toList();
 
         System.out.println("Filtered List: " + filteredList);
