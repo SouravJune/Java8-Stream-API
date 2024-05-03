@@ -1,10 +1,11 @@
+package com.souravjune.programs;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/** Question: Java 8 Program to Find the Sum of All Digits of a Number */
-public class SumOfAllDigits {
-
+/** Question: Java 8 Program to Print Even Numbers from a List */
+public class PrintEvenNumbers {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -17,9 +18,10 @@ public class SumOfAllDigits {
             numberList.add(sc.nextInt());
         }
 
-        Integer totalSum = numberList.stream()
-                .reduce(0, Integer::sum);
+        List<Integer> evenNumberList = numberList.stream()
+                .filter(number -> number % 2 == 0)
+                .toList();
 
-        System.out.println("Total sum of numbers is: " + totalSum);
+        System.out.println("Even numbers are: " + evenNumberList);
     }
 }

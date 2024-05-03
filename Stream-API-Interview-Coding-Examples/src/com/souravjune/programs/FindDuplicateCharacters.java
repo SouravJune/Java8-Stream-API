@@ -1,3 +1,5 @@
+package com.souravjune.programs;
+
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Function;

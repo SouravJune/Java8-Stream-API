@@ -1,3 +1,5 @@
+package com.souravjune.programs;
+
 import java.util.*;
 
 /** Question: Java 8 Program to Find the Maximum Number and Minimum Number in a List and Array */

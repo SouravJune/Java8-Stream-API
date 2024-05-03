@@ -1,9 +1,12 @@
+package com.souravjune.programs;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/** Question: Java 8 Program to Print Even Numbers from a List */
-public class PrintEvenNumbers {
+/** Question: Java 8 Program to Find the Sum of All Digits of a Number */
+public class SumOfAllDigits {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -16,10 +19,9 @@ public class PrintEvenNumbers {
             numberList.add(sc.nextInt());
         }
 
-        List<Integer> evenNumberList = numberList.stream()
-                .filter(number -> number % 2 == 0)
-                .toList();
+        Integer totalSum = numberList.stream()
+                .reduce(0, Integer::sum);
 
-        System.out.println("Even numbers are: " + evenNumberList);
+        System.out.println("Total sum of numbers is: " + totalSum);
     }
 }

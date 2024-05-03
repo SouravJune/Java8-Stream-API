@@ -1,3 +1,5 @@
+package com.souravjune.programs;
+
 import java.util.Scanner;
 import java.util.stream.IntStream;
 

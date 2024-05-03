@@ -1,3 +1,5 @@
+package com.souravjune.programs;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
