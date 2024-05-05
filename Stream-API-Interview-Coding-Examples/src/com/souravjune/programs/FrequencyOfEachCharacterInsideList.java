@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/** Question: Java 8 Program to Find the Frequency of Each Character in a Given List of String */
+/** Question: Java 8 Program To Count Characters in a Given List of String */
 public class FrequencyOfEachCharacterInsideList {
 
     public static void main(String[] args) {
