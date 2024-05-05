@@ -1,11 +1,9 @@
 package com.souravjune.person;
 
-import com.souravjune.person.Person;
-
 import java.util.Arrays;
 import java.util.List;
 
-/** Question: Filter List of Names with the given Character using Java8 Stream */
+/** Question: Filter List of Names with the given Character OR Prefix using Java8 Stream */
 public class FilterNamesWithGivenCharacter {
 
     public static void main(String[] args) {
