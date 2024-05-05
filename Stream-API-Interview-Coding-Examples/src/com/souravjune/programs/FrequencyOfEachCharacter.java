@@ -17,6 +17,6 @@ public class FrequencyOfEachCharacter {
         str.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .forEach((key, value) -> System.out.println("Character: " + key + ", Count: " + value));
+                .forEach((character, frequency) -> System.out.println("Character: " + character + ", Count: " + frequency));
     }
 }
