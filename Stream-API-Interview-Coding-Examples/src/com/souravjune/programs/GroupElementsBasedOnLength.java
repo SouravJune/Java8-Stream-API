@@ -3,10 +3,9 @@ package com.souravjune.programs;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+/**Question: Write a Java 8 program to group elements of a list based on their lengths */
 public class GroupElementsBasedOnLength {
 
     public static void main(String[] args) {
