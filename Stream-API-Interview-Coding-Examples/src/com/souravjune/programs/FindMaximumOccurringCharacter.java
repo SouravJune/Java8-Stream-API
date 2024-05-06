@@ -1,5 +1,6 @@
 package com.souravjune.programs;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class FindMaximumOccurringCharacter {
         Optional<Map.Entry<Character, Long>> duplicateCharactersFrequency = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase()
                 .chars()
                 .mapToObj(c -> (char) c)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet().stream()
                 .max(Map.Entry.comparingByValue()); // .max(Comparator.comparing(Map.Entry::getValue));
 
