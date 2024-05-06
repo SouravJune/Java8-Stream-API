@@ -1,6 +1,5 @@
 package com.souravjune.programs;
 
-import java.util.Comparator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
@@ -21,7 +20,6 @@ public class FindMaximumOccurringCharacter {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream()
-                .filter(entry -> entry.getValue() > 1)
                 .max(Map.Entry.comparingByValue()); // .max(Comparator.comparing(Map.Entry::getValue));
 
         duplicateCharactersFrequency.ifPresent((entry) ->
