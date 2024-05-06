@@ -1,4 +1,4 @@
-package com.souravjune.person;
+package com.souravjune.programs;
 
 import java.util.Arrays;
 
