@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
+/** Question: Write a Java 8 program to find the difference between consecutive elements in a list of integers */
 public class DifferenceBetweenConsecutiveElements {
 
     public static void main(String[] args) {
