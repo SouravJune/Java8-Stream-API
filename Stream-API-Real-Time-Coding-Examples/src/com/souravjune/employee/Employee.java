@@ -8,6 +8,7 @@ public class Employee {
     private String gender;
     private String department;
     private int yearOfJoining;
+    private String city;
     private double salary;
 
     public int getId() {
@@ -58,6 +59,14 @@ public class Employee {
         this.yearOfJoining = yearOfJoining;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public double getSalary() {
         return salary;
     }
@@ -66,13 +75,14 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Employee(int id, String name, int age, String gender, String department, int yearOfJoining, double salary) {
+    public Employee(int id, String name, int age, String gender, String department, int yearOfJoining, String city, double salary) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.department = department;
         this.yearOfJoining = yearOfJoining;
+        this.city = city;
         this.salary = salary;
     }
 
@@ -85,6 +95,7 @@ public class Employee {
                 ", gender='" + gender + '\'' +
                 ", department='" + department + '\'' +
                 ", yearOfJoining=" + yearOfJoining +
+                ", city='" + city + '\'' +
                 ", salary=" + salary +
                 '}';
     }
