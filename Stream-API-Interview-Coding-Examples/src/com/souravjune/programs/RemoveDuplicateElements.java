@@ -3,6 +3,7 @@ package com.souravjune.programs;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class RemoveDuplicateElements {
 
@@ -25,6 +26,15 @@ public class RemoveDuplicateElements {
                 .toList();
 
         System.out.println("***** List without duplicate fruits: ***** " + distinctFruitList);
+
+        /* Question: Remove All Duplicate Characters from a Given String Using Streams */
+        String str = "banana";
+        String collectResult = str.chars()
+                .distinct()
+                .mapToObj(c -> String.valueOf((char) c))
+                .collect(Collectors.joining());
+
+        System.out.println("***** Without duplicate characters: ***** " + collectResult);
 
         /* Question: Java 8 Program to Remove Duplicate Objects from a List */
         List<Person> personList = Arrays.asList(

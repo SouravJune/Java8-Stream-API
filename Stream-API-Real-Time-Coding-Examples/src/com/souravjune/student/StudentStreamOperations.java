@@ -2,7 +2,6 @@ package com.souravjune.student;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StudentStreamOperations {
 
@@ -22,8 +21,9 @@ public class StudentStreamOperations {
 
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         /* Question: 1. Find list of students whose first name starts with alphabet S */
-        Stream<Student> prefixStudentList = studentList.stream()
-                .filter(student -> student.getFirstName().startsWith("S"));
+        List<Student> prefixStudentList = studentList.stream()
+                .filter(student -> student.getFirstName().startsWith("S"))
+                .toList();
 
         System.out.println("List of students whose first name starts with alphabet S: " + prefixStudentList);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -35,7 +35,7 @@ public class StudentStreamOperations {
         System.out.println("Students grouped by the department names: " + studentListByDepartment);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: 3. Find the total count of student using stream */
+        /* Question: 3. Find the total count of the student using stream */
         long countStudent = studentList.stream().count(); //System.out.println("Total count of students: " + studentList.size());
 
         System.out.println("Total count of students: " + countStudent);

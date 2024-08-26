@@ -22,7 +22,7 @@ public class PrimeNumberChecker {
             return false;
         }
 
-        return IntStream.rangeClosed(2, (int) Math.sqrt(number))
+        return IntStream.range(2, number)
                 .noneMatch(i -> number % i == 0);
     }
 

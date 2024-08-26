@@ -2,13 +2,12 @@ package com.souravjune.employee;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class EmployeeStreamOperations {
 
     public static void main(String[] args) {
 
-        List<Employee> employeeList = new ArrayList<Employee>();
+        List<Employee> employeeList = new ArrayList<>();
 
         employeeList.add(new Employee(111, "Jiya Brein", 32, "Female", "HR", 2011, "Kolkata",25000.0));
         employeeList.add(new Employee(122, "Paul Niksui", 25, "Male", "Sales And Marketing", 2015, "Hyderabad",13500.0));
@@ -224,8 +223,11 @@ public class EmployeeStreamOperations {
         /* Question: 20. Find the employees that these employees work for, where the number of employees in the department is over 2 */
         System.out.println("Employees where the number of employees in the department is over 2: ");
         employeeList.stream()
+                  /* If instead of employee-list, only name of employee needed ->
+                    .collect(Collectors.groupingBy(Employee::getDepartment,
+                         Collectors.mapping(Employee::getName, Collectors.toList()))) */
                 .collect(Collectors.groupingBy(Employee::getDepartment))
-        .entrySet().stream()
+                .entrySet().stream()
                         .filter(entry -> entry.getValue().size() > 2)
                                 .forEach(employeesOver2InDept -> {
                                     System.out.println("Department: " + employeesOver2InDept.getKey());
@@ -234,22 +236,57 @@ public class EmployeeStreamOperations {
                                 });
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: 21. Find all employees who lives in ‘Kolkata’ city, sort them by their name and print the names of employees */
+        System.out.println("Employees who lives in ‘Kolkata’ city: ");
+        employeeList.stream()
+                        .filter(employee -> employee.getCity().equalsIgnoreCase("Kolkata"))
+                                .sorted(Comparator.comparing(Employee::getName))
+                                        .forEach(System.out::println);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: 22. No of employees in the organization */
+        long count = employeeList.stream().count();
+
+        System.out.println("No of employees in the organisation: " + count);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: 23. Find the department which has the highest number of employees */
+        employeeList.stream()
+                        .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()))
+                                .entrySet().stream()
+                        .max(Map.Entry.comparingByValue())
+                .ifPresent(department -> System.out.println(department.getKey() + " department has the highest number of employees"));
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: 24. Sorting a Stream by age and name fields */
+        System.out.println("Sorting a Stream by age and name fields: ");
+        List<Employee> sortedEmpByAgeAndName = employeeList.stream()
+                .sorted(Comparator.comparing(Employee::getAge).thenComparing(Employee::getName))
+                .toList();
+
+        sortedEmpByAgeAndName.forEach(System.out::println);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: 25. Print Average salary of each department */
+//        System.out.println("Print Average salary of each department");
+//        employeeList.stream()
+//                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.mapping(Employee::getSalary, Collectors.toList())))
+//                .entrySet().stream()
+//                .map(Map.Entry::getValue)
+//                .peek(values -> va)
+//                .reduce()
+//
+//        Set<Map.Entry<String, Double>> entrySet = avgSalary.entrySet();
+//        for (Map.Entry<String, Double> entry : entrySet) {
+//            System.out.println(entry.getKey() + " : " + entry.getValue());
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        /* Question: */
+        /* Question: Print employee list based on their salary in descending order*/
+        List<Employee> sortedEmployees = employeeList.stream()
+                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                .toList();
+
+        sortedEmployees.forEach(System.out::println);
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         /* Question: */

@@ -1,0 +1,61 @@
+1,5,17,20,23,24,25,26
+
+<< Stream Interface and their base interfaces from java 17 oracle
+    && Comparable and Comparator interface
+    && Collectors class
+    && Collections class
+    && Arrays class
+    && String class >>
+
+Sure, the map() method in Java 8 Stream API is a very powerful tool that can be used for a variety of tasks. Here are some examples:
+
+Type Conversion: You can use map() to convert each element in the stream from one type to another1. For example, you can convert a Stream<String> to a Stream<Integer>:
+Java
+
+List<String> strings = Arrays.asList("1", "2", "3");
+List<Integer> integers = strings.stream()
+    .map(Integer::valueOf)
+    .collect(Collectors.toList());
+AI-generated code. Review and use carefully. More info on FAQ.
+
+Object Transformation: You can use map() to transform objects1. For example, you can convert a list of PersonEntity objects to a list of PersonVO objects:
+Java
+
+List<PersonEntity> personEntityList = ...; // A List of PersonEntity objects
+List<PersonVO> personVoList = personEntityList.stream()
+    .map(e -> createVoFromEntity(e))
+    .collect(Collectors.toList());
+AI-generated code. Review and use carefully. More info on FAQ.
+String Manipulation: You can use map() to perform operations on strings2. For example, you can prepend a string to each number in a list:
+Java
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+List<String> strings = numbers.stream()
+    .map(n -> "Number " + n)
+    .collect(Collectors.toList());
+AI-generated code. Review and use carefully. More info on FAQ.
+Removing Duplicates: You can use map() in combination with distinct() to remove duplicate elements3:
+
+### used to get and set values
+List<String> filteredProducts1 = productList.stream()
+                .filter(product -> product.getProductPrice() < 100000)
+                .map(Product::getProductName)
+                .toList();
+
+Data Transformation: map() can be used to transform the data in some way1. For example, you can square each number in a list:
+Java
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<Integer> squares = numbers.stream()
+    .map(n -> n * n)
+    .collect(Collectors.toList());
+
+### when we need to perform operations on two consecutive elements and to store the value we use map() method
+System.out.println("Differences between consecutive elements:");
+        IntStream.range(0, numberList.size() - 1)
+                .map(i -> numberList.get(i) - numberList.get(i + 1))
+                .forEach(System.out::println);
+
+        ### and when we need to perform accumulative result means one output from all the elements we will go for reduce() method
+ int result = numberList.stream()
+                .reduce(1, (num1, num2) -> num1 * num2);

@@ -26,8 +26,8 @@ public class ConcatenateStreams {
         String concatenatedStream = Stream.concat(
                 str1.chars().mapToObj(c1 -> (char) c1).toList().stream(),
                 str2.chars().mapToObj(c2 -> (char) c2).toList().stream()
-        ).map(String::valueOf)
-                .reduce("", (s1, s2) -> s1 + s2);
+            ).map(String::valueOf)
+                    .reduce("", (s1, s2) -> s1 + s2);
 
         System.out.println(concatenatedStream);
 

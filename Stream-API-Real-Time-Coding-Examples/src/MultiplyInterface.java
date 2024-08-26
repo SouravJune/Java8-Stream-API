@@ -8,7 +8,7 @@ class MultiplicationUsingFunctionalInterface {
 
     public static void main(String[] args) {
 
-        MultiplyInterface result = (a, b) -> (a * b);
+        MultiplyInterface result = (a, b) -> (a + b);
         System.out.println(result.add(5, 6));
     }
 }

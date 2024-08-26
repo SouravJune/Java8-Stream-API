@@ -22,7 +22,7 @@ public class DifferenceBetweenLargestAndSmallestNumber {
         int min = numberList.stream()
                 .mapToInt(Integer::intValue)
                 .min()
-                .orElse(0);
+                .orElse(0);   
 
         int max = numberList.stream()
                 .mapToInt(Integer::intValue)
