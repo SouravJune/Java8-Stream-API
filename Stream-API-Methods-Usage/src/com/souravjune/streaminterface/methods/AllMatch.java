@@ -255,9 +255,6 @@ public class AllMatch {
         System.out.println("Verify that all strings in a list follow camelCase naming convention: " + allCamelCase);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
 
-<<<<<<< Updated upstream
-        numberList.stream().anyMatch(null);
-=======
         /* Check if All Products Are In Stock: Ensure that all products in a list are in stock. */
         boolean allInStock = Product.getProducts().stream()
                 .allMatch(Product::isInStock);
@@ -265,8 +262,5 @@ public class AllMatch {
         System.out.println("Ensure that all products in a list are in stock: " + allInStock);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
 
-
-
->>>>>>> Stashed changes
     }
 }
