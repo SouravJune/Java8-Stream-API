@@ -247,5 +247,6 @@ public class AllMatch {
         System.out.println("Verify that all strings in a list follow camelCase naming convention: " + allCamelCase);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
 
+        numberList.stream().anyMatch(null);
     }
 }
