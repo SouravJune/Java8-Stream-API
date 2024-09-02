@@ -1,5 +1,6 @@
 package com.souravjune.model;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +8,7 @@ public class Transaction {
     private int id;
     private String description;
     private double amount;
+    private LocalDate transactionDate;
 
     public int getId() {
         return id;
@@ -30,6 +32,14 @@ public class Transaction {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public LocalDate getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(LocalDate transactionDate) {
+        this.transactionDate = transactionDate;
     }
 
     public Transaction(int id, String description, double amount) {
