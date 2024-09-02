@@ -222,7 +222,7 @@ public class AllMatch {
         System.out.println("Ensure all dates in a list are Saturdays or Sundays: " + allAreWeekends);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
 
-        /*  Confirm All Files Have a Certain Extension: Check if all file names in a list end with ".pdf". */
+        /* Confirm All Files Have a Certain Extension: Check if all file names in a list end with ".pdf". */
         List<String> fileNames = Arrays.asList("document1.pdf", "file2.pdf", "report.pdf");
 
         boolean allPDFs = fileNames.stream()
@@ -241,12 +241,32 @@ public class AllMatch {
         /* Ensure All Strings Follow a Specific Pattern: Verify that all strings in a list follow camelCase naming convention. */
         List<String> identifiers = Arrays.asList("camelCase", "anotherExample", "thirdTest");
 
+        /* Regex: ^[a-z]+([A-Z][a-z]*)*$
+        - Matches strings starting with lowercase letters followed by camelCase patterns.
+        - ^         : Start of the string
+        - [a-z]+    : One or more lowercase letters
+        - ([A-Z][a-z]*)* : Zero or more groups of an uppercase letter followed by zero or more lowercase letters
+        - $         : End of the string
+        */
+
         boolean allCamelCase = identifiers.stream()
                 .allMatch(id -> id.matches("^[a-z]+([A-Z][a-z]*)*$"));
 
         System.out.println("Verify that all strings in a list follow camelCase naming convention: " + allCamelCase);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
 
+<<<<<<< Updated upstream
         numberList.stream().anyMatch(null);
+=======
+        /* Check if All Products Are In Stock: Ensure that all products in a list are in stock. */
+        boolean allInStock = Product.getProducts().stream()
+                .allMatch(Product::isInStock);
+
+        System.out.println("Ensure that all products in a list are in stock: " + allInStock);
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+
+
+
+>>>>>>> Stashed changes
     }
 }
