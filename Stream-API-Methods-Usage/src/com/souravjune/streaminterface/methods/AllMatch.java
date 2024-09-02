@@ -261,6 +261,6 @@ public class AllMatch {
 
         System.out.println("Ensure that all products in a list are in stock: " + allInStock);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
-
+        System.out.println("****************");
     }
 }
