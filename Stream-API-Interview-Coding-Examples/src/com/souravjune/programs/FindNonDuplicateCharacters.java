@@ -5,7 +5,8 @@ import java.util.Scanner;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/** Question: Java 8 Program to Print Non Duplicate Characters and its frequency in a given String */
+/* Question: Java 8 Program to Print Non Duplicate Characters and its frequency in a given String */
+/* Question: Write a Java 8 program to print all characters that have the least frequency in a given string. */
 public class FindNonDuplicateCharacters {
 
     public static void main(String[] args) {

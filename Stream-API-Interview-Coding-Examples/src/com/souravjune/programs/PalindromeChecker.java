@@ -58,7 +58,8 @@ public class PalindromeChecker {
     }
 
     private static boolean isPalindromeStringChecker(String str) {
-        return str.contentEquals(new StringBuilder(str).reverse()); // return str.equals(new StringBuilder(str).reverse().toString());
+        String lowercaseString = str.toLowerCase();
+        return lowercaseString.contentEquals(new StringBuilder(lowercaseString).reverse()); // return str.equals(new StringBuilder(lowercaseString).reverse().toString());
     }
 
     private static boolean isPalindromeSentenceChecker(String sentence) {
